@@ -1,7 +1,12 @@
+/*jshint node:true*/
+'use strict';
+
 var mongoose = require('mongoose');
 
 var noteSchema = mongoose.Schema({
-  noteBody: 'String'
+    noteTitle: { type: String, required: true },
+    noteBody: String,
+    date: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('Note', noteSchema);
